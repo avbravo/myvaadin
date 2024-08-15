@@ -4,6 +4,7 @@
  */
 package com.avbravo.myvaadin;
 
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -18,6 +19,14 @@ import com.vaadin.flow.router.Route;
 public class CompositionView  extends VerticalLayout {
     
  public CompositionView() {
+     
+              var buttonLogin = new Button("Login");
+    buttonLogin.addClickListener(event ->{
+//        Notification.show("Hello!");
+         UI.getCurrent().navigate(MainView.class);
+                }
+    );
+    add(buttonLogin);
   var toolbar = new HorizontalLayout(
     new Button("Button 1"),
     new Button("Button 2"),

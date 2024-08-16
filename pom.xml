@@ -12,14 +12,19 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
-        <vaadin.version>24.4.7</vaadin.version>
+        <vaadin.version>24.4.8</vaadin.version>
         <version.payara>6.2024.8</version.payara>
-           <microprofile.version>6.1</microprofile.version>
-             <microprofile-config-api.version>3.1</microprofile-config-api.version>
+        <microprofile.version>6.1</microprofile.version>
+        <microprofile-config-api.version>3.1</microprofile-config-api.version>
 
         <microprofile-health-api.version>4.0.1</microprofile-health-api.version>
         <microprofile-metrics-api.version>5.1.0</microprofile-metrics-api.version>
-         <final.name>myvadin</final.name>
+        <final.name>myvadin</final.name>
+        
+          <version.jmoordbfaces>1.5.1</version.jmoordbfaces>
+        <version.jmoordbutilfaces>3.4</version.jmoordbutilfaces>
+        <version.jmoordbencripter>2.0</version.jmoordbencripter>
+        <version.jmoordb-core-annotations>2.0.0</version.jmoordb-core-annotations>
     </properties>
 
     <dependencyManagement>
@@ -56,7 +61,7 @@
         </dependency>
         
         
-         <dependency>
+        <dependency>
             <groupId>org.eclipse.microprofile</groupId>
             <artifactId>microprofile</artifactId>
             <version>${microprofile.version}</version>
@@ -77,10 +82,32 @@
             <type>jar</type>
         </dependency>
         
+        
+            
+        <!--
+     
+        
+        -->
+        <dependency>
+            <groupId>com.github.avbravo</groupId>
+            <artifactId>jmoordb-core-annotations</artifactId>
+            <version>${version.jmoordb-core-annotations}</version>
+        </dependency>
+        
+          <dependency>
+            <groupId>com.github.avbravo</groupId>
+            <artifactId>jmoordbutilfaces</artifactId>
+            <version>${version.jmoordbutilfaces}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.avbravo</groupId>
+            <artifactId>jmoordbencripter</artifactId>
+            <version>${version.jmoordbencripter}</version>
+        </dependency>
     </dependencies>
 
     <build>
-             <finalName>${final.name}</finalName>
+        <finalName>${final.name}</finalName>
         <defaultGoal>jetty:run</defaultGoal>
         <plugins>
             <plugin>
@@ -205,4 +232,11 @@
             </build>
         </profile>
     </profiles>
+    
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 </project>

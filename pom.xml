@@ -14,6 +14,12 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <vaadin.version>24.4.7</vaadin.version>
         <version.payara>6.2024.8</version.payara>
+           <microprofile.version>6.1</microprofile.version>
+             <microprofile-config-api.version>3.1</microprofile-config-api.version>
+
+        <microprofile-health-api.version>4.0.1</microprofile-health-api.version>
+        <microprofile-metrics-api.version>5.1.0</microprofile-metrics-api.version>
+         <final.name>myvadin</final.name>
     </properties>
 
     <dependencyManagement>
@@ -48,9 +54,33 @@
             <version>10.0.0</version>
             <scope>provided</scope>
         </dependency>
+        
+        
+         <dependency>
+            <groupId>org.eclipse.microprofile</groupId>
+            <artifactId>microprofile</artifactId>
+            <version>${microprofile.version}</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.microprofile.config</groupId>
+            <artifactId>microprofile-config-api</artifactId>
+            <version>${microprofile-config-api.version}</version>
+        </dependency>
+        
+        
+        <dependency>
+            <groupId>org.eclipse.microprofile.health</groupId>
+            <artifactId>microprofile-health-api</artifactId>
+            <version>${microprofile-health-api.version}</version>
+            <type>jar</type>
+        </dependency>
+        
     </dependencies>
 
     <build>
+             <finalName>${final.name}</finalName>
         <defaultGoal>jetty:run</defaultGoal>
         <plugins>
             <plugin>

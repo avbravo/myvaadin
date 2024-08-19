@@ -16,27 +16,27 @@ import com.vaadin.flow.router.Route;
  * @author avbravo
  */
 @Route("composition")
-public class CompositionView  extends VerticalLayout {
-    
- public CompositionView() {
-     
-              var buttonLogin = new Button("Login");
-    buttonLogin.addClickListener(event ->{
+public class CompositionView extends VerticalLayout {
+
+    public CompositionView() {
+
+        var buttonLogin = new Button("Login");
+        buttonLogin.addClickListener(event -> {
 //        Notification.show("Hello!");
-         UI.getCurrent().navigate(MainView.class);
-                }
-    );
-    add(buttonLogin);
-  var toolbar = new HorizontalLayout(
-    new Button("Button 1"),
-    new Button("Button 2"),
-    new Button("Button 3")
-  );
-  add(
-    toolbar,
-    new Paragraph("Paragraph 1"),
-    new Paragraph("Paragraph 2"),
-    new Paragraph("Paragraph 3")
-  );
- }
+            UI.getCurrent().navigate(MainView.class);
+        }
+        );
+        add(buttonLogin);
+        var toolbar = new HorizontalLayout(
+                new Button("Button 1"),
+                new Button("Button 2"),
+                new Button("Button 3")
+        );
+        add(
+                toolbar,
+                new Paragraph("Paragraph 1"),
+                new Paragraph("Paragraph 2"),
+                new Paragraph("Paragraph 3")
+        );
+    }
 }

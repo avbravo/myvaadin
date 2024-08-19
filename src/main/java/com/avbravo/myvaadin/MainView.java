@@ -10,7 +10,7 @@ import com.vaadin.flow.router.Route;
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
 
-@Route
+@Route()
 public class MainView extends VerticalLayout {
  // <editor-fold defaultstate="collapsed" desc="Microprofile Config">
 //    @Inject
